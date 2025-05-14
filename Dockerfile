@@ -4,6 +4,7 @@ WORKDIR /app
 
 # Создаем папку Data и даем права на запись
 RUN mkdir -p /app/Data && chmod 777 /app/Data
+RUN mkdir -p /app/keys && chmod 777 /app/keys
 
 EXPOSE 8080
 EXPOSE 8081

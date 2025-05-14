@@ -12,6 +12,7 @@ RUN dotnet publish "CatalogueWebApp.csproj" -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+RUN mkdir -p /app/keys && chmod 777 /app/keys
 RUN mkdir -p /app/Data && chmod 777 /app/Data
 COPY test-data.json /app/Data/
 EXPOSE 8080
