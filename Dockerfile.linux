@@ -16,3 +16,4 @@ RUN mkdir -p /app/Data && chmod 777 /app/Data
 COPY test-data.json /app/Data/
 EXPOSE 8080
 EXPOSE 8081
+CMD ["dotnet", "CatalogueWebApp.dll"]
