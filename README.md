@@ -20,9 +20,9 @@ Docker;
 Bootstrap.
 
 # Системные требования
-Два варианта работы:
-1. Контейнер - в Docker-контейнере уже настроены MongoDB, ElascticSearch, можно сразу развернуть.
-2. Без контейнера, тогда потребуется:
-.NET SDK 8.0
-MongoDB
-ElasticSearch
+В appsettings.json установлено по умолчанию под Windows:
+"ConnectionString": "mongodb://host.docker.internal:27017", а для ElasticSearchSettings "Uri": "http://localhost:9200",
+На Windows: host.docker.internal автоматически резолвится в IP хоста.
+
+На Linux нужно будет установить mongodb: "ConnectionString": "mongodb://mongodb:27017", а для ElasticSearchSettings "Uri": "http://elasticsearch:9200".
+Потребуется установка MongoDB, ElasticSearch и запуск их в отдельном контейнере.
